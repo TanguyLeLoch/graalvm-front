@@ -1,0 +1,11 @@
+<div class="login-form">
+  <form [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="address">Enter you eth address:</label>
+      <input id="address" type="text" formControlName="address">
+    </div>
+    <div class="action-buttons">
+      <button type="submit" (click)="onLogin()" [disabled]="loginForm.invalid">Login</button>
+    </div>
+  </form>
+</div>

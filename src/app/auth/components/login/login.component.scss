@@ -1,0 +1,68 @@
+@use '../../../../variables';
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    padding: 35px 80px;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+.action-buttons {
+  padding: 10px;
+
+  button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 2px solid variables.$font-color;
+    outline: none;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: variables.$font-color;
+    cursor: pointer;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  color: variables.$font-color;
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  label {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: variables.$font-color;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: variables.$font-color;
+    box-shadow: inset 0 0 20px 20px #23232329;
+  }
+}
+
