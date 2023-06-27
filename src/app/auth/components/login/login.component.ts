@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {LoginService} from "../../../core/services/login.service";
+import {tap} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,18 +14,19 @@ export class LoginComponent implements OnInit {
   loginForm !: FormGroup;
   ethAddressRegex !: RegExp;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.ethAddressRegex = /0x[a-zA-Z0-9]{40}/
     this.loginForm = this.formBuilder.group({
       address: [null, [Validators.required, Validators.pattern(this.ethAddressRegex)]],
-    }, {updateOn: 'blur'});
+    });
   }
 
   onLogin(): void {
-    console.log("Login");
+    this.loginService.login(this.loginForm.value.address).pipe(
+      tap(() => this.router.navigateByUrl(''))
+    ).subscribe();
   }
-
 }

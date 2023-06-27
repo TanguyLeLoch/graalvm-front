@@ -6,7 +6,7 @@
   align-items: center;
 
   form {
-    padding: 35px 80px;
+    padding: 35px calc(10vw - 10px);
     max-width: 500px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -30,7 +30,19 @@
     font-size: 1.2rem;
     background-color: rgba(0, 0, 0, 0.2);
     color: variables.$font-color;
-    cursor: pointer;
+    opacity: 0.1;
+    cursor: not-allowed;
+    transition: opacity 0.3s ease;
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:not(:disabled) {
+      opacity: 1;
+      cursor: pointer;
+    }
+
   }
 }
 
@@ -52,6 +64,7 @@
     border: none;
     outline: none;
     font-size: 1.2rem;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.2);
     color: variables.$font-color;
   }

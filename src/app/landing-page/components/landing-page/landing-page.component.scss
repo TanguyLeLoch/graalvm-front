@@ -1,0 +1,26 @@
+@use "../../../../variables";
+
+h1 {
+  font-size: min(9vw, 50px);
+  text-align: center;
+  //padding: 10vw;
+}
+
+
+.landing-links {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 2px solid variables.$font-color;
+  outline: none;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: variables.$font-color;
+  opacity: 1;
+  cursor: pointer;
+}
