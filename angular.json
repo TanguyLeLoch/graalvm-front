@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "https://fonts.googleapis.com/css?family=Pacifico"
+              "src/styles.scss"
             ],
             "scripts": []
           },
