@@ -3,6 +3,6 @@ import {Pair} from "./pair.model";
 
 export class User {
 
-  constructor(private address: String, private status: String, private pairs: Pair[], private balances: Map<String, Balance>) {
+  constructor(public address: string, private status: string, private pairs: Pair[], private balances: Map<string, Balance>) {
   }
 }

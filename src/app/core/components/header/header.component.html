@@ -1,1 +1,11 @@
-<p>header works!12</p>
+<header class="header-bar">
+  <a routerLink="/"><h1> Losses </h1></a>
+  <!--  <div *ngIf="user" class="user-account">-->
+  <div *ngIf="user" class="user-container">
+    <div class="overlay overlay-left"></div>
+    <span *ngIf="user" class="address">
+      {{getShorterAddress(user.address)}}
+    </span>
+    <div class="overlay overlay-right"></div>
+  </div>
+</header>

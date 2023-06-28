@@ -1,4 +1,4 @@
-<div class="login-form">
+<div class="login-form" [ngClass]="{logged:logged}">
   <form [formGroup]="loginForm">
     <div class="form-group">
       <label for="address">Enter you eth address:</label>

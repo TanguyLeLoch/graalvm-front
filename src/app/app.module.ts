@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {AuthModule} from "./auth/auth.module";
 import {CoreModule} from "./core/core.module";
 import {LandingPageModule} from "./landing-page/landing-page.module";
+import {UserModule} from "./user/user.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {LandingPageModule} from "./landing-page/landing-page.module";
     CoreModule,
     AuthModule,
     LandingPageModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

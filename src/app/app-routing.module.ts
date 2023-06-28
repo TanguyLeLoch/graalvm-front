@@ -5,6 +5,7 @@ import {LandingPageComponent} from "./landing-page/components/landing-page/landi
 
 const routes: Routes = [
   {path: 'auth/login', component: LoginComponent},
+  {path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
   {path: '', component: LandingPageComponent},
 ];
 

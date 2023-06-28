@@ -17,5 +17,4 @@ export class LandingPageComponent implements OnInit {
   onStart() {
     this.router.navigateByUrl('/auth/login');
   }
-
 }
