@@ -6,6 +6,7 @@ import {LoginService} from "../../../core/services/login.service";
 import {AddPairRequest} from "../../../core/model/add-pair-request.model";
 import {tap} from "rxjs";
 import {Pair} from "../../../core/model/pair.model";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-user',
@@ -15,6 +16,7 @@ import {Pair} from "../../../core/model/pair.model";
 export class UserComponent implements OnInit {
 
   user!: User
+  pairAddress!: string;
 
   constructor(private userService: UserService, private http: HttpClient, private loginService: LoginService) {
   }
@@ -38,5 +40,12 @@ export class UserComponent implements OnInit {
         tap(user => this.user = user)
       ).subscribe()
 
+  }
+
+  onSubmitForm(addPairForm: NgForm) {
+    console.log(addPairForm.value);
+    this.userService.addPair(this.user.address, addPairForm.value).pipe(
+      tap(user => this.user = user)
+    ).subscribe()
   }
 }

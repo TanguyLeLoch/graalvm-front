@@ -9,8 +9,10 @@
 
     </div>
     <div>
-      <button class="btn btn-primary" (click)="addPair()">Add Pair</button>
+      <form class="add-pair-form" #addPairForm="ngForm" (ngSubmit)="onSubmitForm(addPairForm)">
+        <input type="text" id="pairAddress" [(ngModel)]="pairAddress" name="pairAddress">
+        <button class="btn btn-remove" type="submit">+</button>
+      </form>
     </div>
-
   </div>
 </div>

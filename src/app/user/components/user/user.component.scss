@@ -45,3 +45,36 @@
   color: variables.$font-color;
   outline: none;
 }
+
+.btn-add {
+  height: 49px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+  color: variables.$font-color;
+  outline: none;
+}
+
+.add-pair-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  input {
+    height: 49px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+    color: variables.$font-color;
+    font-family: 'Agdasima', sans-serif;
+    width: 100%;
+
+  }
+}
