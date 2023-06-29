@@ -1,6 +1,16 @@
-<div>
-  bonjour
-  <p>
-    {{JSON.stringify(user)}}
-  </p>
+<div class="pairs-container">
+  <div class="pairs">
+    <div *ngFor="let pair of user.pairs" class="pair">
+      <span class="pair-detail">
+      {{ pair.token0.symbol }}/{{ pair.token1.symbol }}
+      </span>
+
+      <button class="btn btn-remove" (click)="removePair(pair)">X</button>
+
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="addPair()">Add Pair</button>
+    </div>
+
+  </div>
 </div>

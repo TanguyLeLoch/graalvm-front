@@ -1,0 +1,47 @@
+@use "../../../../variables";
+
+.pairs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.pairs {
+  padding: 35px calc(10vw - 10px);
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pair {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pair-detail {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+  color: variables.$font-color;
+}
+
+.btn-remove {
+  height: 49px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+  color: variables.$font-color;
+  outline: none;
+}

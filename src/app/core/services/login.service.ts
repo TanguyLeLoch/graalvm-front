@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, tap} from "rxjs";
 import {User} from "../model/user.model";
+import {LocalStorageService} from "./local-storage.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class LoginService {
   loggedIn$ = this.loggedInSubject.asObservable();
   user!: User;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
   }
 
 
@@ -21,6 +22,7 @@ export class LoginService {
       tap(user => {
           this.setLoggedIn(user);
           this.user = user;
+          this.localStorageService.setItem("userAddress", address);
         }
       ));
   }
