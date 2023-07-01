@@ -1,18 +1,40 @@
-<div class="pairs-container">
-  <div class="pairs">
-    <div *ngFor="let pair of user.pairs" class="pair">
-      <span class="pair-detail">
-      {{ pair.token0.symbol }}/{{ pair.token1.symbol }}
+<div class="container">
+
+  <div class="pairs-container">
+    <div class="pairs">
+
+      <div *ngFor="let pair of user.pairs" class="pair">
+        <button class="btn btn-remove" (click)="removePair(pair)">
+          <fa-icon class="bin-icon" [icon]="faTrash"></fa-icon>
+        </button>
+
+        <span class="pair-detail">
+        {{ pair.token0.symbol }}/{{ pair.token1.symbol }}
       </span>
 
-      <button class="btn btn-remove" (click)="removePair(pair)">X</button>
-
-    </div>
-    <div>
-      <form class="add-pair-form" #addPairForm="ngForm" (ngSubmit)="onSubmitForm(addPairForm)">
-        <input type="text" id="pairAddress" [(ngModel)]="pairAddress" name="pairAddress">
-        <button class="btn btn-remove" type="submit">+</button>
+      </div>
+      <form #pairAddressForm="ngForm" class="add-pair-form" (ngSubmit)="onSubmitForm(pairAddressForm)">
+        <!--          *ngIf="buttonClicked"-->
+        <input [ngClass]="{'to-hide': !buttonClicked}"
+               class="input-pair"
+               #pairAddressInput
+               type="text"
+               name="pairAddress"
+               [(ngModel)]="pairAddress"
+               placeholder="Enter pair address">
+        <button class="btn btn-add" type="submit">
+          <span *ngIf="!buttonClicked"
+                class="add-pair"
+          > Add a pair</span>
+          <fa-icon *ngIf="buttonClicked"
+                   class="validate-icon"
+                   [icon]="faCheck"
+          ></fa-icon>
+        </button>
       </form>
     </div>
   </div>
+
+  <button (click)="computePnl()"> Calculer PNL</button>
+
 </div>

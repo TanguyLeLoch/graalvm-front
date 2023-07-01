@@ -18,7 +18,7 @@ import {UserModule} from "./user/user.module";
     CoreModule,
     AuthModule,
     LandingPageModule,
-    UserModule
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
