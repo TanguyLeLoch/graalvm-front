@@ -11,7 +11,7 @@ export class LoginService {
 
   private loggedInSubject = new BehaviorSubject<User | null>(null);
   loggedIn$ = this.loggedInSubject.asObservable();
-  user!: User;
+  user!: User | null;
 
   constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
   }
@@ -29,5 +29,11 @@ export class LoginService {
 
   setLoggedIn(user: User): void {
     this.loggedInSubject.next(user);
+  }
+
+  logout() {
+    this.loggedInSubject.next(null);
+    this.user = null;
+    this.localStorageService.removeItem("userAddress");
   }
 }

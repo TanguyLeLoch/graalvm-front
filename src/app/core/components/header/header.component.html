@@ -3,9 +3,11 @@
   <!--  <div *ngIf="user" class="user-account">-->
   <div *ngIf="user" class="user-container">
     <div class="overlay overlay-left"></div>
+    <button (click)="logout()" class="btn logout">
     <span *ngIf="user" class="address">
       {{getShorterAddress(user.address)}}
     </span>
+    </button>
     <div class="overlay overlay-right"></div>
   </div>
 </header>

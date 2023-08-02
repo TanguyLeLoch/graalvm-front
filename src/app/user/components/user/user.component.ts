@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
   @ViewChild('pairAddressInput', {static: false}) pairAddressInput!: ElementRef;
 
 
-  user!: User
+  user!: User;
   pairAddress!: string;
   buttonClicked: boolean = false
 
@@ -32,7 +32,9 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = this.loginService.user;
+    if (this.loginService.user) {
+      this.user = this.loginService.user;
+    }
   }
 
   removePair(pair: Pair): void {
